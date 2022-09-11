@@ -21,10 +21,10 @@ y = max(z, 0)
 # Derivative from next layer
 dvalue = 1.0
 
-# Derivation of ReLU and the chain rule
+# Derivation of ReLU and then chain rule
 drelu_dz = dvalue * (1. if z > 0 else 0.)
 
-# Partial derivatives of the mutliplication, chain rule
+# Partial derivatives of the mutliplication then chain rule
 dsum_dxw0 = 1
 drelu_dxw0 = drelu_dz * dsum_dxw0
 
@@ -39,6 +39,7 @@ drelu_db = drelu_dz * dsum_db
 
 print(drelu_db, drelu_dxw0, drelu_dxw1, drelu_dxw2)
 
+# Partial derivatives then chain rule
 dmul_dx0 = w[0]
 dmul_dx1 = w[1]
 dmul_dx2 = w[2]
